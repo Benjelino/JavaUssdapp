@@ -1,6 +1,9 @@
 package com.egima.ussd;
 
+
+
 import javax.servlet.ServletException;
+
 import hms.sdp.ussd.MchoiceUssdException;
 import hms.sdp.ussd.MchoiceUssdMessage;
 import hms.sdp.ussd.MchoiceUssdTerminateMessage;
@@ -25,13 +28,14 @@ public class UssdReceiver extends MchoiceUssdReceiver {
 
             super.init();
             try {
-                   String clientUrl = "";
-                   String appId = "appid";
-                   String pass = "password";
-                   ussdSender = new MchoiceUssdSender(clientUrl, appId, pass);
-            } catch (MchoiceUssdException e) {
-                   e.printStackTrace();
-            }
+                String clientUrl = "https://linoussd.herokuapp.com";
+                String appId = "appid";
+                String pass = "password";
+                ussdSender = new MchoiceUssdSender(clientUrl, appId, pass);
+                System.out.println(clientUrl + " this");
+         } catch (MchoiceUssdException e) {
+                e.printStackTrace();
+         }
       }
 
       /**
