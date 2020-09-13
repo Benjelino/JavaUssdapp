@@ -28,7 +28,7 @@ public class UssdReceiver extends MchoiceUssdReceiver {
 
             super.init();
             try {
-                String clientUrl = "https://linoussd.herokuapp.com";
+                String clientUrl = "http://127.0.0.1:8000/ussd";
                 String appId = "appid";
                 String pass = "password";
                 ussdSender = new MchoiceUssdSender(clientUrl, appId, pass);
@@ -38,6 +38,7 @@ public class UssdReceiver extends MchoiceUssdReceiver {
          }
       }
 
+      
       /**
        * override onMessage of the parent class, we are passed MchoiceUssdMessage
        * which contains some useful data about the session and client
